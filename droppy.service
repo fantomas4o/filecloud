@@ -1,0 +1,13 @@
+[Unit]
+Description=Droppy Lite File Manager
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/droppy
+ExecStart=/usr/bin/node /opt/droppy/server.js
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

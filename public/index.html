@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FileCloud</title>
+    <link rel="icon" href="favicon.png" type="image/png" id="faviconLink">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=One+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="material-icons">cloud_queue</span>
+                <h1>FileCloud</h1>
+            </div>
+            <div class="actions">
+                <select id="langSelect" class="lang-select">
+                    <option value="en">English</option>
+                    <option value="bg">Български</option>
+                </select>
+                <button id="uploadBtn" class="btn btn-primary" data-i18n="upload">
+                    <span class="material-icons">upload</span> Upload
+                </button>
+                <button id="createFolderBtn" class="btn btn-secondary" data-i18n="newFolder">
+                    <span class="material-icons">create_new_folder</span> New Folder
+                </button>
+            </div>
+        </header>
+
+        <nav class="breadcrumb" id="breadcrumb">
+            <!-- Breadcrumbs will be injected here -->
+        </nav>
+
+        <main class="file-list-container" id="dropZone">
+            <div class="file-list-header">
+                <div class="col-icon"></div>
+                <div class="col-name" data-i18n="name">Name</div>
+                <div class="col-size" data-i18n="size">Size</div>
+                <div class="col-date" data-i18n="date">Date</div>
+                <div class="col-actions"></div>
+            </div>
+            <div id="fileList" class="file-list">
+                <!-- Files will be injected here -->
+            </div>
+            <div id="emptyState" class="empty-state hidden">
+                <span class="material-icons">folder_open</span>
+                <p data-i18n="emptyFolder">This folder is empty</p>
+            </div>
+        </main>
+    </div>
+
+    <!-- Context Menu / Modals -->
+    <div id="editorModal" class="modal hidden">
+        <div class="modal-content editor-content">
+            <div class="modal-header">
+                <h2 id="editorFileName">Edit File</h2>
+                <div class="modal-actions">
+                    <button id="saveFileBtn" class="btn btn-primary" data-i18n="save">Save</button>
+                    <button id="closeEditorBtn" class="btn btn-secondary" data-i18n="close">Close</button>
+                </div>
+            </div>
+            <textarea id="fileEditor" spellcheck="false"></textarea>
+        </div>
+    </div>
+
+    <div id="previewModal" class="modal hidden">
+        <div class="modal-content preview-content">
+            <div class="modal-header">
+                <h2 id="previewFileName">Preview</h2>
+                <button id="closePreviewBtn" class="btn btn-secondary" data-i18n="close">Close</button>
+            </div>
+            <div class="preview-body" id="previewBody">
+                <!-- Image or media will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Input Modal -->
+    <div id="inputModal" class="modal hidden">
+        <div class="modal-content input-content">
+            <div class="modal-header">
+                <h2 id="inputModalTitle">Input</h2>
+            </div>
+            <div class="modal-body">
+                <input type="text" id="inputModalValue" class="modal-input" autocomplete="off">
+            </div>
+            <div class="modal-actions" style="justify-content: flex-end; margin-top: 20px;">
+                <button id="inputModalCancel" class="btn btn-secondary" data-i18n="close">Cancel</button>
+                <button id="inputModalConfirm" class="btn btn-primary" data-i18n="confirm">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Color Picker Modal -->
+    <div id="colorModal" class="modal hidden">
+        <div class="modal-content color-content">
+            <div class="modal-header">
+                <h2 data-i18n="selectColor">Select Color</h2>
+            </div>
+            <div class="modal-body color-grid">
+                <div class="color-swatch" style="--swatch: #facc15" data-color="#facc15"></div> <!-- Default Yellow -->
+                <div class="color-swatch" style="--swatch: #ef4444" data-color="#ef4444"></div> <!-- Red -->
+                <div class="color-swatch" style="--swatch: #f97316" data-color="#f97316"></div> <!-- Orange -->
+                <div class="color-swatch" style="--swatch: #22c55e" data-color="#22c55e"></div> <!-- Green -->
+                <div class="color-swatch" style="--swatch: #06b6d4" data-color="#06b6d4"></div> <!-- Cyan -->
+                <div class="color-swatch" style="--swatch: #3b82f6" data-color="#3b82f6"></div> <!-- Blue -->
+                <div class="color-swatch" style="--swatch: #8b5cf6" data-color="#8b5cf6"></div> <!-- Purple -->
+                <div class="color-swatch" style="--swatch: #ec4899" data-color="#ec4899"></div> <!-- Pink -->
+                <div class="color-swatch" style="--swatch: #64748b" data-color="#64748b"></div> <!-- Slate -->
+                <div class="color-swatch" style="--swatch: #ffffff" data-color="#ffffff"></div> <!-- White -->
+            </div>
+            <div class="modal-actions" style="justify-content: flex-end; margin-top: 20px;">
+                <button id="colorModalClose" class="btn btn-secondary" data-i18n="close">Close</button>
+                <button id="colorModalClear" class="btn btn-primary" data-i18n="resetColor">Reset</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="app-footer">
+        <p data-i18n="footerCredit">Създадено съвместно с ❤️ от Федя Серафиев и Google Antigravity</p>
+    </footer>
+
+    <!-- Hidden Input for File Upload -->
+    <input type="file" id="fileInput" multiple style="display: none;">
+
+    <script src="app.js"></script>
+</body>
+
+</html>
