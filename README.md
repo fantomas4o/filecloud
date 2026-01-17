@@ -92,3 +92,8 @@ To run FileCloud as a background service:
 Created with ❤️ by **Fedya Serafiev**.
 
 *2026 FileCloud Project*
+
+💝 If you found this helpful, please consider supporting my work:
+
+* [☕ PayPal](https://www.paypal.com/donate/?hosted_button_id=UESCPAJUGUN2A)
+* [💳 Revolut](https://revolut.me/fedya2s8q)
