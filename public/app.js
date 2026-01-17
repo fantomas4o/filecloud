@@ -37,7 +37,7 @@ const dictionaries = {
         openFailed: 'Failed to open file',
         selectColor: 'Select Color',
         resetColor: 'Reset',
-        footerCredit: 'Created with ❤️ by Fedya Serafiev and Google Antigravity'
+        footerCredit: 'Created with ❤️ by Fedya Serafiev'
     },
     bg: {
         upload: 'Качване',
@@ -69,7 +69,7 @@ const dictionaries = {
         openFailed: 'Грешка при отваряне на файл',
         selectColor: 'Изберете Цвят',
         resetColor: 'Изчисти',
-        footerCredit: 'Създадено съвместно с ❤️ от Федя Серафиев и Google Antigravity'
+        footerCredit: 'Създадено с ❤️ от Федя Серафиев'
     }
 };
 
@@ -545,3 +545,4 @@ window.addEventListener('click', (e) => {
 // Init
 updateLanguage();
 fetchFiles();
+
