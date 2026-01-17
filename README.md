@@ -35,7 +35,7 @@
 ### Local Development
 1.  **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/filecloud.git
+    git clone git@github.com:fantomas4o/filecloud.git
     cd filecloud
     ```
 
@@ -48,7 +48,7 @@
     ```bash
     npm start
     ```
-    Access the app at `http://localhost:3000`.
+    Access the app at `http://localhost:3000` or `http://ip:3000`.
 
 ### Server Deployment (Ubuntu/Systemd)
 To run FileCloud as a background service:
